@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <h1 class="text-center">Login</h1>
+      <%= form_tag('/sessions', method: 'post') do %>
+        <div class="form-group">
+            <%= text_field_tag(:username) %>
+        </div>
+        <div class="actions">
+          <%= submit_tag('Sign-In') %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
