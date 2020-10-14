@@ -5,11 +5,12 @@ class EventsController < ApplicationController
     end
 
     def index
-        @event = Event.all
+        @events = Event.all
     end
 
     def create
-        @event = Event.new(params_event)
+        user = User.find(session[:user_id])
+        @event = user.events.new(params_event)
         if @event.save
             flash[:notice] = "You have successfully created an event!"
             redirect_to events_path
