@@ -1,7 +1,16 @@
 <h1 class= "pt-2">Events</h1>
 <div class="card pt-0">
 <div class="card-body">
-<% @events.each do |event| %>
+<h2>Upcoming Event</h2>
+<% @upcoming.each do |event| %>
+<h4><%= event.name %> <br></h4>
+<%= event.description %> <br>
+<%= event.location %> <br>
+<%= event.date %>
+<%= link_to 'More Info', event_path(event) %>
+<% end %>
+<h2>Past Event</h2>
+<% @past.each do |event| %>
 <h4><%= event.name %> <br></h4>
 <%= event.description %> <br>
 <%= event.location %> <br>
