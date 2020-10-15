@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
     def new
-
+        
     end
 
     def create
@@ -8,6 +8,8 @@ class SessionsController < ApplicationController
         if user
             session[:user_id] = user.id
             redirect_to events_path
+        else 
+            render 'new'
         end 
     end
     
