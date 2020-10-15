@@ -1,12 +1,20 @@
-class ApplicationController < ActionController::Base
-    helper_method :current_user
-    def CheckUser
-       if !session[:user_id]
-       redirect_to new_session_path
-       end
-    end
-    def current_user
-        @current_user = session[:user_id] if session[:user_id]
-        # @current_user ||= User.find(session[:user_id]) if session[:user_id]
-    end
+ class ApplicationController < ActionController::Base
+  helper_method :current_user, :logged_in?
+
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  def logged_in?
+    !current_user.nil?
+  end
+
+  def require_user
+    return if logged_in?
+
+    flash[:danger] = 'You need to be logged in to perform that action'
+    redirect_to root_path
+  end
 end
+
+

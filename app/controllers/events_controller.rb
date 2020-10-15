@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
-    before_action :CheckUser
+    before_action :require_user, except: [:index]
+
     def new
         @event = Event.new
     end
