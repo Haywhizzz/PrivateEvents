@@ -14,6 +14,9 @@ class UsersController < ApplicationController
             render 'new'
     end
 end
+def destroy
+    @user.destroy
+end
 
     private
     def params_user

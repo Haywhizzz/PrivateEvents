@@ -1,5 +1,13 @@
-<p>Events</p>
+<h1 class= "pt-2">Events</h1>
+<div class="card pt-0">
+<div class="card-body">
 <% @events.each do |event| %>
-<%= event.name %>
+<h4><%= event.name %> <br></h4>
+<%= event.description %> <br>
+<%= event.location %> <br>
+<%= event.date %>
 <% end %>
-<%= link_to 'Sign In', new_user_path %>
+</div>
+</div>
+
+<%= link_to "Sign Out", users_destroy_path, :method => :delete %>

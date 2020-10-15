@@ -20,6 +20,7 @@ class EventsController < ApplicationController
     end
     end
 
+
     private
 
     def params_event
