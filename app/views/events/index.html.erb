@@ -6,8 +6,8 @@
 <%= event.description %> <br>
 <%= event.location %> <br>
 <%= event.date %>
+<%= link_to 'More Info', event_path(event) %>
 <% end %>
 </div>
 </div>
 
-<%= link_to "Sign Out", users_destroy_path, :method => :delete %>
