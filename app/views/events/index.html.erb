@@ -1,22 +1,24 @@
 <h1 class= "pt-2">Events</h1>
 <div class="card pt-0">
 <div class="card-body">
-<h2>Upcoming Event</h2>
+<h2 class="text_primary">Upcoming Events</h2>
 <% @upcoming.each do |event| %>
-<h4><%= event.name %> <br></h4>
+<div class="py-4"><h4><%= event.name %> </h4>
 <%= event.description %> <br>
 <%= event.location %> <br>
-<%= event.date %>
-<%= link_to 'More Info', event_path(event) %>
-<% end %>
-<h2>Past Event</h2>
+<%= event.date %><br>
+<%= link_to 'More Info', event_path(event) %> <br>
+<% end %>  </div> </div>
+
+<div class="">
+<h2>Past Events</h2>
 <% @past.each do |event| %>
-<h4><%= event.name %> <br></h4>
+<div class="py-4"><h4><%= event.name %> </h4>
 <%= event.description %> <br>
 <%= event.location %> <br>
-<%= event.date %>
-<%= link_to 'More Info', event_path(event) %>
-<% end %>
+<%= event.date %><br>
+<%= link_to 'More Info', event_path(event) %> <br>
+<% end %>  </div> 
 </div>
-</div>
+
 

@@ -1,15 +1,16 @@
+<h2 class='py-4'>Create New Event</h2>
 <%= form_for @event do |f| %>  
   <% @event.errors.full_messages.each do |error| %>
   <li><%= error %></li><br>
   <% end %>
 
-   <%= f.label :name, 'Event Title:'%>
+   <%= f.label :name, 'Event Title:', :class => 'py-3'%>
   <%= f.text_field :name%><br><br>
-   <%= f.label :description, 'Event Description:'%>
+   <%= f.label :description, 'Event Description:', :class => 'py-3'%>
   <%= f.text_field :description%><br><br>
-   <%= f.label :location, 'Event Location:'%>
+   <%= f.label :location, 'Event Location:', :class => 'py-3'%>
   <%= f.text_field :location%><br><br>
-   <%= f.label :date, 'Date:'%>
+   <%= f.label :date, 'Date:', :class => 'py-3'%>
   <%= f.datetime_select :date %><br><br>
   <%= f.submit 'Save'%>
 <% end %>
