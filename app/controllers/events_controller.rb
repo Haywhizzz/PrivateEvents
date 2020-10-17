@@ -25,6 +25,7 @@ class EventsController < ApplicationController
             render 'new'
     end
     end
+    
 
 
     private

@@ -1,0 +1,9 @@
+<h1>Registration for <%= link_to @event.name, @event %></h1>
+
+<%= form_with(model: [@event], local: true) do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %> <br><br>
+
+  <%= f.submit 'Register' %>
+<% end %>
