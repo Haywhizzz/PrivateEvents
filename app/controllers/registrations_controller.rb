@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class RegistrationsController < ApplicationController
   def index
     @event = Event.find(params[:event_id])
@@ -13,16 +11,14 @@ class RegistrationsController < ApplicationController
 
   def create
     @event = Event.find(params[:format])
-    # user = User.find(session[:user_id])
-    # @registration = user.attended_events.build(params[:format])
     @user = current_user
     @registration = Registration.new(attendee_id: @user.id, attended_event_id: @event.id)
-    # @registrations = @event.registrations.new(registration_params)
-    if @registration.save
-      redirect_to root_path
 
+    if @registration.save
+      flash[:notice] = 'Event was created successfully'
+      redirect_to events_path
     else
-      redirect_to root_path
+      flash[:alert] = 'Woops something went wrong'
     end
   end
 

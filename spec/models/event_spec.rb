@@ -17,7 +17,8 @@ RSpec.describe Event, type: :model do
 
   context 'validation tests' do
     it 'should save successfully' do
-      event = Event.new(name: 'Someone', description: 'Some randon text here', location: 'Somewhere', date: '21-10-2020').save
+      event = Event.new(name: 'Someone', description: 'Some randon text here',
+                        location: 'Somewhere', date: '21-10-2020').save
       expect(event).to eql(false)
     end
   end
