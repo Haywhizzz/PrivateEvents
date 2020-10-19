@@ -1,21 +1,22 @@
 <h1> <%= @user.username %> </h1>
+<h5>Events Created by me</h5>
 <% @user.events.each do |event| %>
 <strong> <%= event.name %></strong> <br>
 <%= event.description %> <br>
 <%= event.location %><br>
 <%= event.date %>
 <% end %>
-<br>
+<br> <hr>
 
-<h3>Upcoming Event</h3>
+<h5>Upcoming Event</h5>
 <% @upcoming.each do |event| %>
 <strong> <%= event.name %></strong> <br>
 <%= event.description %> <br>
 <%= event.location %><br>
 <%= event.date %> <br>
-<% end %> 
+<% end %> <hr>
 
-<h3>Past Event</h3>
+<h5>Past Event</h5>
 <% @past.each do |event| %>
 <strong> <%= event.name %></strong> <br>
 <%= event.description %> <br>
