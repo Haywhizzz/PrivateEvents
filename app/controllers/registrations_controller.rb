@@ -15,12 +15,12 @@ class RegistrationsController < ApplicationController
     @event = Event.find(params[:format])
     # user = User.find(session[:user_id])
     # @registration = user.attended_events.build(params[:format])
-     @user = current_user
-     @registration = Registration.new(attendee_id: @user.id, attended_event_id: @event.id)
+    @user = current_user
+    @registration = Registration.new(attendee_id: @user.id, attended_event_id: @event.id)
     # @registrations = @event.registrations.new(registration_params)
     if @registration.save
       redirect_to root_path
-                  
+
     else
       redirect_to root_path
     end

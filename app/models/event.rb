@@ -9,5 +9,4 @@ class Event < ApplicationRecord
   scope :upcoming, -> { where(['date > ?', Date.today]) }
 
   validates :name, :description, :location, :date, presence: true, uniqueness: true
-  
 end

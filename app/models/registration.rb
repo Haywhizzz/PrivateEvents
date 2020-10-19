@@ -5,5 +5,4 @@ class Registration < ApplicationRecord
   belongs_to :attended_event, class_name: 'Event'
 
   validates :attendee_id, presence: true, uniqueness: true
-
 end

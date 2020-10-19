@@ -18,9 +18,9 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to events_path
     else
-      redirect_to new_session_path, info: "Oops, you need to sign up"
-end
-end
+      redirect_to new_session_path, info: 'Oops, you need to sign up'
+    end
+  end
 
   private
 

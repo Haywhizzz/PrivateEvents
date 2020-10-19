@@ -7,7 +7,6 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
-
   def index
     @past = Event.past
     @upcoming = Event.upcoming
@@ -26,7 +25,7 @@ class EventsController < ApplicationController
     else
       flash[:alert] = "Oops, there's an error creating your event!"
       render 'new'
-end
+    end
   end
 
   private
