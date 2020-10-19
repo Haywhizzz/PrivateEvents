@@ -4,8 +4,8 @@
 <h4> <%= @event.date %> </h4>
 <div> 
 <p>
-<%= link_to "Register!", new_event_registration_path(@event), class: "btn btn-secondary" %> 
-<%= link_to "Who's Registered?", event_registrations_path(@event) %> 
+<%= link_to "Register!", register_path(@event), class: "btn btn-secondary", method: :post %> 
+
 </p>
 </div>
 <% @event.attendees.each do |attendee| %>

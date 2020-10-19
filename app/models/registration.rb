@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Registration < ApplicationRecord
-  belongs_to :event
-
-  # validates :name, presence :true
+  belongs_to :attendee, class_name: 'User'
+  belongs_to :attended_event, class_name: 'Event'
 end

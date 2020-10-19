@@ -2,7 +2,10 @@
 <ul class="registrations">
     <%= @registrations.each do |r| %>
         <li>
-            <%= r.name %>
+            <%= r.attendee.username %>
+            <%= r.attended_event.name %>
+            <%= r.attended_event.description %>
+            <%= r.attended_event.location %>
         </li>
     <% end %>
 </ul>

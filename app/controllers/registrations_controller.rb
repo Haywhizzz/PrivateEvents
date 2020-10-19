@@ -3,7 +3,7 @@
 class RegistrationsController < ApplicationController
   def index
     @event = Event.find(params[:event_id])
-    @registrations = @event.registrations
+    @registrations = Registration.all
   end
 
   def new
@@ -12,13 +12,17 @@ class RegistrationsController < ApplicationController
   end
 
   def create
-    @event = Event.find(params[:event_id])
-    @registrations = @event.registrations.new(registration_params)
+    @event = Event.find(params[:format])
+    # user = User.find(session[:user_id])
+    # @registration = user.attended_events.build(params[:format])
+     @user = current_user
+     @registration = Registration.new(attendee_id: @user.id, attended_event_id: @event.id)
+    # @registrations = @event.registrations.new(registration_params)
     if @registration.save
-      redirect to event_registrations_url(@event),
-                  notice: 'Thanks for registering!'
+      redirect_to root_path
+                  
     else
-      render :new
+      redirect_to root_path
     end
   end
 
