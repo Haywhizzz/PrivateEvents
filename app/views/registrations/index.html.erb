@@ -1,0 +1,11 @@
+<h1>Registrations for <%=link_to @event.name, @event%> </h1>
+<ul class="registrations">
+    <%= @registrations.each do |r| %>
+        <li>
+            <%= r.attendee.username %>
+            <%= r.attended_event.name %>
+            <%= r.attended_event.description %>
+            <%= r.attended_event.location %>
+        </li>
+    <% end %>
+</ul>

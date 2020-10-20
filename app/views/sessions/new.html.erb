@@ -1,0 +1,10 @@
+<h2 class="py-3">Existing User? Sign In</h2>
+      <%= form_tag('/sessions', method: 'post') do %>
+        <div class="form-group">
+        <%= label :username, 'Your Username here:'%>
+            <%= text_field_tag(:username) %>
+        </div>
+        <div class="actions">
+          <%= submit_tag('Sign-In') %>
+        </div>
+      <% end %>

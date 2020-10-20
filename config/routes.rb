@@ -1,3 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: 'events#index'
+  post 'register', to: 'registrations#create'
+  get 'registers', to: 'registrations#index'
+  resources :registrations
+  resources :events do
+    resources :registrations
+  end
+  resources :users
+  resources :sessions
 end

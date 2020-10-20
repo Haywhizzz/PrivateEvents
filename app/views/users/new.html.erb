@@ -1,0 +1,9 @@
+<h2 class="py-3"> New User? Sign Up</h2>
+<%= form_for @user do |f| %>  
+  <% @user.errors.full_messages.each do |error| %>
+  <li><%= error %></li><br>
+  <% end %>
+ <%= f.label :username, 'Your Username here:'%>
+  <%= f.text_field :username%><br><br>
+  <%= f.submit 'Save'%>
+<% end %> 

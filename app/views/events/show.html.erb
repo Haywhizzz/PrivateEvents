@@ -1,0 +1,17 @@
+<h1> <%= @event.name %> </h1>
+<h5> <strong> Description: </strong><%= @event.description %> </h5>
+<h5> <strong> Location: </strong> <%= @event.location%> </h5>
+<h5> <strong> Date: </strong> <%= @event.date %> </h5>
+<div> 
+<p>
+<%= link_to "Register!", register_path(@event), class: "btn btn-secondary", method: :post %> 
+
+</p>
+</div>
+<strong> <h3>Also Attending:</h3> </strong>
+<% @event.attendees.each do |attendee| %>
+<ul>
+<li> <strong> <%= attendee.username %>   
+<% end %> </strong>
+</li>
+</ul>
