@@ -15,7 +15,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    user = User.find(session[:user_id])
+    @user = User.find(session[:user_id])
     @event = current_user.events.build(params_event)
     if @event.save
       flash[:notice] = 'You have successfully created an event!'
